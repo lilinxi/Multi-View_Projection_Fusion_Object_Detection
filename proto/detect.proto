@@ -1,0 +1,92 @@
+syntax = "proto3";
+package pano_detection;
+
+service DeformYolov5 {
+  rpc Detect (YoloModelRequest) returns (YoloModelResponse) {}
+}
+
+/***************************** ↓ 数据集 ↓ *****************************/
+message GroundTruthBBX {// 真值框
+  // required
+  int64 xmin = 1;
+  int64 ymin = 2;
+  int64 xmax = 3;
+  int64 ymax = 4;
+  int64 label = 5;
+
+  // optional
+  double x_center = 50;
+  double y_center = 51;
+  double width = 52;
+  double height = 53;
+  string label_name = 54;
+}
+
+message DatasetModel {// 数据库输出模型
+  // required
+  string image_path = 1;
+  repeated GroundTruthBBX ground_truth_bbx_list = 2;
+
+  // optional
+  string image_filename = 50;
+  bytes image_ndarray = 51; // Y * X, height * width
+}
+/***************************** ↑ 数据集 ↑ *****************************/
+
+
+/***************************** ↓ 网络模型 ↓ *****************************/
+message YoloModelRequest {// Yolo 网络输入模型
+  // required
+  string image_path = 1;
+
+  // optional
+  int64 image_size = 2; // image 被缩放后的大小
+  string weights_path = 4; // 网络权重
+  double conf_thres = 5; // 置信度阈值，默认 0.25
+  double iou_thres = 6; // iou 阈值，默认 0.45
+}
+
+message DetectResultBBX {// 检测结果框
+  // required
+  int64 xmin = 1;
+  int64 ymin = 2;
+  int64 xmax = 3;
+  int64 ymax = 4;
+  int64 label = 5;
+  double conf = 6; // 置信度
+}
+
+message YoloModelResponse {// Yolo 网络输出模型
+  // required
+  string image_path = 1;
+  repeated DetectResultBBX detect_result_bbx_list = 2;
+}
+/***************************** ↑ 网络模型 ↑ *****************************/
+
+/***************************** ↓ 投影模型 ↓ *****************************/
+message ProjectRequest {
+  // required
+  DatasetModel pano_dataset_model = 1;
+  int64 pano_height = 2;
+  int64 pano_width = 3;
+  int64 project_height = 4;
+  int64 project_width = 5;
+}
+
+message ProjectResponse {
+  repeated DatasetModel proj_dataset_model_list = 1;
+}
+
+message StereoProjectParams{
+  // 单位球，R 取值为 1
+  double project_dis = 1; // 投影图与球心的距离，与 R 的倍数，取值范围【1，+oo）
+  double project_size = 2; // 投影图与球面相切时，投影正方形与 R 的倍数，取值范围（0，+oo）
+  double theta_rotate = 3; // 全景图投影前的水平旋转角度，取值范围【0，2pi）
+}
+
+message StereoProjectRequest {
+  // required
+  ProjectRequest project_request = 1;
+  repeated StereoProjectParams project_params_list = 2;
+}
+/***************************** ↑ 投影模型 ↑ *****************************/
