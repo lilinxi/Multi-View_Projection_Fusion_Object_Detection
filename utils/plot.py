@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 
 import proto_gen.detect_pb2
+import dataset.sun360_extended_dataset
 import utils.nda2bytes
 
 
@@ -54,7 +55,7 @@ def PlotDatasetModel(dataset_model: proto_gen.detect_pb2.DatasetModel, plot_bbx=
 # 绘制网络输出模型：检测框
 def PlotYolov5ModelResponse(
         yolo_model_resp: proto_gen.detect_pb2.YoloModelResponse,
-        class_labels: List[str]
+        class_labels: List[str] = dataset.sun360_extended_dataset.Sun360ExtendedClassLabels
 ) -> np.ndarray:
     # x, im, color = (128, 128, 128), label = None, line_thickness = 3
     im = cv2.imread(yolo_model_resp.image_path)  # BGR
@@ -78,7 +79,7 @@ def PlotYolov5ModelResponse(
 def PlotDatasetModelAndYolov5ModelResponse(
         dataset_model: proto_gen.detect_pb2.DatasetModel,
         detect_resp: proto_gen.detect_pb2.YoloModelResponse,
-        class_labels: List[str]) -> np.ndarray:
+        class_labels: List[str] = dataset.sun360_extended_dataset.Sun360ExtendedClassLabels) -> np.ndarray:
     if dataset_model.image_ndarray:  # 直接绘制图像
         im = utils.nda2bytes.bytes2ndarray(dataset_model.image_ndarray)
     elif dataset_model.image_path:  # 读取后绘制图像

@@ -20,6 +20,11 @@
     - sun360_extended_dataset：读取原始数据集
     - format_dataset：读取格式化数据集
     - projection_sun360_extended_dataset：投影原始数据集
+- demo：示例
+- detect：目标检测
+    - mvpf_detect：MVPF 目标检测
+    - nms：非极大值抑制
+    - project_detect：投影目标检测
 - metrics：评价指标
     - mAP：计算平均精度
     - metrics_utils：评价指标工具
