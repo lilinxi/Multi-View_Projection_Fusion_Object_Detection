@@ -1,1 +1,1 @@
-# Multi-View_Projection_Fucion_Object_Detection
+# Multi-View_Projection_Fusion_Object_Detection
