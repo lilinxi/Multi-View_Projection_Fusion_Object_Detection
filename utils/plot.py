@@ -100,7 +100,7 @@ def PlotDatasetModelAndYolov5ModelResponse(
         cv2.rectangle(im, c1, c2, color, -1, cv2.LINE_AA)  # filled
         cv2.putText(im, label, (c1[0], c1[1] - 2), 0, tl / 3, [225, 255, 255], thickness=tf, lineType=cv2.LINE_AA)
     for bbx in detect_resp.detect_result_bbx_list:
-        color = (255, 0, 0)
+        color = (0, 0, 255)
         # rect
         c1, c2 = (bbx.xmin, bbx.ymin), (bbx.xmax, bbx.ymax)
         cv2.rectangle(im, c1, c2, color, thickness=tl, lineType=cv2.LINE_AA)

@@ -25,7 +25,7 @@
     - mvpf_detect：MVPF 目标检测
     - nms：非极大值抑制
     - project_detect：投影目标检测
-- metrics：评价指标
+- metrics_utils：评价指标
     - mAP：计算平均精度
     - metrics_utils：评价指标工具
 - proj：投影

@@ -100,47 +100,12 @@ def project_detect(
     return yolo_model_resp
 
 
-# def stereo_detect(req: proto_gen.detect_pb2.YoloModelRequest) -> proto_gen.detect_pb2.YoloModelResponse:
-#     """
-#     This function is used to detect objects in a stereo image.
-#     """
-#     image = cv2.imread(req.image_path)
-#     proj_params_list = [
-#         proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=1, theta_rotate=0.0),
-#         proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=1, theta_rotate=np.pi / 4),
-#         proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=1, theta_rotate=np.pi / 2),
-#         proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=1, theta_rotate=np.pi * 3 / 4),
-#         proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=1, theta_rotate=np.pi),
-#         proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=1, theta_rotate=np.pi * 5 / 4),
-#         proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=1, theta_rotate=np.pi * 3 / 2),
-#         proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=1, theta_rotate=np.pi * 7 / 4),
-#     ]
-#     yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse(
-#         image_path=req.image_path,
-#         detect_result_bbx_list=[],
-#     )
-#     for i, proj_params in enumerate(proj_params_list):
-#         proj_image = proj.perspective_proj.perspective_proj(image, proj_params, 640, 640)
-#         cv2.imwrite('/tmp/stereo_detect/proj_image.jpg', proj_image)
-#         proj_yolo_model_resp = yolo.yolov5_service.Yolov5Detect(
-#             proto_gen.detect_pb2.YoloModelRequest(
-#                 image_path="/tmp/stereo_detect/proj_image.jpg",
-#                 weights_path="/Users/bytedance/PycharmProjects/211110_PanoDetectionProtobuf/yolo/persp_83_best.pt"
-#             ))
-#         cv2.imshow(f'proj_image_{i}', yolo.yolov5_service.WarpYolov5ModelResponse(proj_yolo_model_resp))
-#         for bbx in proj_yolo_model_resp.detect_result_bbx_list:
-#             yolo_model_resp.detect_result_bbx_list.extend(
-#                 stereo2pano(bbx, proj_params)
-#             )
-#     return yolo_model_resp
-
-
 if __name__ == '__main__':
     import utils.plot
 
     yolo_model_req = proto_gen.detect_pb2.YoloModelRequest(
         image_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/demo/pano_0a46e210e7018af58de6f45f0997486c.png",
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_exp25_best.pt"
+        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt"
     )
     yolo_model_resp = project_detect(
         yolo_model_req,

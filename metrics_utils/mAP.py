@@ -8,7 +8,7 @@ import numpy as np
 import proto_gen.detect_pb2
 
 import dataset.format_dataset
-import metrics_utils
+import metrics_utils.yolov5_metrics_utils
 
 
 def compute_mAP(
@@ -26,13 +26,13 @@ def compute_mAP(
     Compute mAP for a given dataset.
     """
     # 如果不缓存就删除上次的检测结果
-    if not cache:
+    if not cache and os.path.exists(detect_save_dir):
         shutil.rmtree(detect_save_dir)
     # 创建文件夹存储检测结果
     os.path.exists(detect_save_dir) or os.makedirs(detect_save_dir)
     os.path.exists(plot_save_dir) or os.makedirs(plot_save_dir)
 
-    device = metrics_utils.select_device(device)
+    device = metrics_utils.yolov5_metrics_utils.select_device(device)
     if plot_names_dict:
         names_dict = {k: v for k, v in names_dict.items() if plot_names_dict[k]}
         names_dict_map = {key: index for index, key in enumerate(names_dict)}  # label 映射，新 label dict 的字典序下标作为新 label
@@ -41,7 +41,7 @@ def compute_mAP(
     iouv = torch.linspace(0.5, 0.95, 10).to(device)
     # 存储 Metrics
     stats = []
-    confusion_matrix = metrics_utils.ConfusionMatrix(nc=len(names_dict))
+    confusion_matrix = metrics_utils.yolov5_metrics_utils.ConfusionMatrix(nc=len(names_dict))
     for i, data in enumerate(format_dataset):
         logging.info(f'Processing {i}th image...')
         # step1. 读取数据标注
@@ -59,6 +59,7 @@ def compute_mAP(
         # step2. 获取检测结果并缓存
         detect_result_file = f'{detect_save_dir}/{data.image_filename}.txt'
         if os.path.exists(detect_result_file):
+            print(f'{detect_result_file} exists, skip...')
             yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse()
             yolo_model_resp.ParseFromString(open(detect_result_file, 'rb').read())
         else:
@@ -86,15 +87,16 @@ def compute_mAP(
             predn[i] = [bbx.xmin, bbx.ymin, bbx.xmax, bbx.ymax, bbx.conf, bbx.label]
         predn = torch.from_numpy(predn).float().to(device)
         # step5. 计算检测指标
-        correct = metrics_utils.process_batch(predn, labelsn, iouv)
+        correct = metrics_utils.yolov5_metrics_utils.process_batch(predn, labelsn, iouv)
         stats.append((correct.cpu(), predn[:, 4].cpu(), predn[:, 5].cpu(), tcls))  # (correct, conf, pcls, tcls)
         confusion_matrix.process_batch(predn, labelsn)
 
     # step6. 绘制检测指标
     stats = [np.concatenate(x, 0) for x in zip(*stats)]  # to numpy
     if len(stats) and stats[0].any():
-        metrics_utils.ap_per_class(*stats, plot=True, save_dir=plot_save_dir, names=names_dict)
+        metrics_utils.yolov5_metrics_utils.ap_per_class(*stats, plot=True, save_dir=plot_save_dir, names=names_dict)
     confusion_matrix.plot(save_dir=plot_save_dir, names=list(names_dict.values()))
+    print(f'save: {plot_save_dir}, {detect_save_dir}')
 
 
 if __name__ == '__main__':
@@ -108,7 +110,7 @@ if __name__ == '__main__':
 
     format_dataset = dataset.format_dataset.FormatDataset(
         dataset_root="/Users/bytedance/Dataset/sun360_extended_dataset_format",
-        train=True,
+        train=False,
         image_width=1024,
         image_height=512,
         class_labels=['bed', 'painting', 'table', 'mirror', 'window', 'curtain', 'chair', 'light', 'sofa',
@@ -125,7 +127,7 @@ if __name__ == '__main__':
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/metrics/tmp_train',
-        plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
-                         9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
+        plot_save_dir='/experiments/bak/equi_1n_exp13_best',
+        # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
+        #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )

@@ -9,7 +9,7 @@ from ensemble_boxes import *
 import proto_gen.detect_pb2
 
 
-def non_max_suppression(detect_result_bbx_list: List[proto_gen.detect_pb2.DetectResultBBX], iou_thres: float = 0.3) \
+def non_max_suppression(detect_result_bbx_list: List[proto_gen.detect_pb2.DetectResultBBX], iou_thr: float = 0.3) \
         -> List[proto_gen.detect_pb2.DetectResultBBX]:
     boxes = np.zeros((len(detect_result_bbx_list), 4), dtype=np.float32)
     scores = np.zeros((len(detect_result_bbx_list)), dtype=np.float32)
@@ -18,7 +18,7 @@ def non_max_suppression(detect_result_bbx_list: List[proto_gen.detect_pb2.Detect
         scores[i] = detect_result_bbx.conf
     boxes = torch.from_numpy(boxes)
     scores = torch.from_numpy(scores)
-    index = torchvision.ops.nms(boxes, scores, iou_thres)  # NMS
+    index = torchvision.ops.nms(boxes, scores, iou_thr)  # NMS
     return [detect_result_bbx_list[i] for i in index]
 
 
@@ -81,41 +81,41 @@ def weighted_nms_adapter(
 
 def weighted_nms(
         all_detect_result_bbx_list: List[List[proto_gen.detect_pb2.DetectResultBBX]],
-        iou_thres: float = 0.3, weights: List[float] = None, **kwargs) \
+        iou_thr: float = 0.3, weights: List[float] = None, **kwargs) \
         -> List[proto_gen.detect_pb2.DetectResultBBX]:
     return weighted_nms_adapter(
         all_detect_result_bbx_list, ensemble_boxes_nms_func=weighted_boxes_fusion,
-        iou_thr=iou_thres,
+        iou_thr=iou_thr,
         weights=weights, **kwargs)
 
 
 def nms(
         all_detect_result_bbx_list: List[List[proto_gen.detect_pb2.DetectResultBBX]],
-        iou_thres: float = 0.3, weights: List[float] = None, **kwargs) \
+        iou_thr: float = 0.3, weights: List[float] = None, **kwargs) \
         -> List[proto_gen.detect_pb2.DetectResultBBX]:
-    return nms(
-        all_detect_result_bbx_list, ensemble_boxes_nms_func=weighted_boxes_fusion,
-        iou_thr=iou_thres,
+    return weighted_nms_adapter(
+        all_detect_result_bbx_list, ensemble_boxes_nms_func=nms,
+        iou_thr=iou_thr,
         weights=weights, **kwargs)
 
 
 def soft_nms(
         all_detect_result_bbx_list: List[List[proto_gen.detect_pb2.DetectResultBBX]],
-        iou_thres: float = 0.3, weights: List[float] = None, **kwargs) \
+        iou_thr: float = 0.3, weights: List[float] = None, **kwargs) \
         -> List[proto_gen.detect_pb2.DetectResultBBX]:
-    return soft_nms(
-        all_detect_result_bbx_list, ensemble_boxes_nms_func=weighted_boxes_fusion,
-        iou_thr=iou_thres,
+    return weighted_nms_adapter(
+        all_detect_result_bbx_list, ensemble_boxes_nms_func=soft_nms,
+        iou_thr=iou_thr,
         weights=weights, **kwargs)
 
 
 def non_maximum_weighted(
         all_detect_result_bbx_list: List[List[proto_gen.detect_pb2.DetectResultBBX]],
-        iou_thres: float = 0.3, weights: List[float] = None, **kwargs) \
+        iou_thr: float = 0.3, weights: List[float] = None, **kwargs) \
         -> List[proto_gen.detect_pb2.DetectResultBBX]:
-    return non_maximum_weighted(
-        all_detect_result_bbx_list, ensemble_boxes_nms_func=weighted_boxes_fusion,
-        iou_thr=iou_thres,
+    return weighted_nms_adapter(
+        all_detect_result_bbx_list, ensemble_boxes_nms_func=non_maximum_weighted,
+        iou_thr=iou_thr,
         weights=weights, **kwargs)
 
 
