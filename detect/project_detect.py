@@ -33,8 +33,9 @@ def detect_box_project2pano(bbx: proto_gen.detect_pb2.DetectResultBBX,
         width=pano_width, height=pano_height,
         theta_rotate=proj_params.theta_rotate,
     )
-    # 处理投影图没有跨边界，但是反投影跨边界的情况，一个投影检测在全景中可能分成两个
-    if maxXY[0] < minXY[0]:
+    # 处理投影图没有跨边界，但是反投影跨边界的情况，一个投影检测在全景中可能分成两个，如果太小也可能一个都没有
+    pano_bbx_list = []
+    if minXY[0] - maxXY[0] > 2:
         pano_bbx_list = [
             proto_gen.detect_pb2.DetectResultBBX(
                 xmin=round(minXY[0]),
@@ -53,7 +54,7 @@ def detect_box_project2pano(bbx: proto_gen.detect_pb2.DetectResultBBX,
                 conf=bbx.conf,
             ),
         ]
-    else:
+    elif maxXY[0] - minXY[0] > 2:
         pano_bbx_list = [proto_gen.detect_pb2.DetectResultBBX(
             xmin=round(minXY[0]),
             ymin=round(minXY[1]),
@@ -91,6 +92,7 @@ def project_detect(
             conf_thres=req.conf_thres,
             iou_thres=req.iou_thres,
         ))
+
     for bbx in proj_yolo_model_resp.detect_result_bbx_list:
         yolo_model_resp.detect_result_bbx_list.extend(
             detect_box_project2pano(bbx, proj_params, projXY2panoXYZ_func=projXY2panoXYZ_func,
@@ -102,14 +104,31 @@ def project_detect(
 
 if __name__ == '__main__':
     import utils.plot
+    import dataset.format_dataset
 
-    yolo_model_req = proto_gen.detect_pb2.YoloModelRequest(
-        image_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/demo/pano_0a46e210e7018af58de6f45f0997486c.png",
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt"
+    format_dataset = dataset.format_dataset.FormatDataset(
+        dataset_root="/Users/bytedance/Dataset/sun360_extended_dataset_format",
+        train=False,
+        image_width=1024,
+        image_height=512,
+        class_labels=['bed', 'painting', 'table', 'mirror', 'window', 'curtain', 'chair', 'light', 'sofa',
+                      'door', 'cabinet', 'bedside', 'tv', 'computer', "glass", "rug", "shelf"],
     )
-    yolo_model_resp = project_detect(
-        yolo_model_req,
-        proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=2, theta_rotate=0.0))
-    print(yolo_model_resp)
-    cv2.imshow("image", utils.plot.PlotYolov5ModelResponse(yolo_model_resp))
-    cv2.waitKey(0)
+
+    for i, data in enumerate(format_dataset):
+        cv2.imshow("data", utils.plot.PlotDatasetModel(data))
+
+        yolo_model_resp = client.object_detection_client.ObjectDetect(proto_gen.detect_pb2.YoloModelRequest(
+            image_path=data.image_path,
+            weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/equi_1n_exp13_best.pt",
+        ))
+        cv2.imshow("equi_image", utils.plot.PlotYolov5ModelResponse(yolo_model_resp))
+
+        yolo_model_resp = project_detect(proto_gen.detect_pb2.YoloModelRequest(
+            image_path=data.image_path,
+            weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        ),
+            proto_gen.detect_pb2.StereoProjectParams(project_dis=1, project_size=2, theta_rotate=4.319689898685965))
+        cv2.imshow("stereo_image", utils.plot.PlotYolov5ModelResponse(yolo_model_resp))
+
+        cv2.waitKey(0)

@@ -47,7 +47,7 @@ def multi_gen_project_detect_mini_10():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_mini_10',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_mini_10',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
 
@@ -83,7 +83,7 @@ def multi_gen_project_detect():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -120,7 +120,7 @@ def multi_gen_project_detect_mini_10_001():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_mini_10_001',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_mini_10_001',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
 
@@ -157,7 +157,7 @@ def multi_gen_project_detect_001():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_001',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_001',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -193,7 +193,7 @@ def multi_gen_project_detect_weighted_mini_10():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_weighted_mini_10',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_weighted_mini_10',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
 
@@ -229,7 +229,7 @@ def multi_gen_project_detect_weighted_detect():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_weighted_detect',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_weighted_detect',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -266,7 +266,7 @@ def multi_gen_project_detect_weighted_mini_10_001():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_weighted_mini_10_001',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_weighted_mini_10_001',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
 
@@ -303,7 +303,7 @@ def multi_gen_project_detect_weighted_001():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_weighted_001',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_weighted_001',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -340,7 +340,7 @@ def multi_gen_project_detect_weighted_mini_10_nms():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_weighted_mini_10_nms',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_weighted_mini_10_nms',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
 
@@ -377,7 +377,7 @@ def multi_gen_project_detect_weighted_detect_nms():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_weighted_detect_nms',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_weighted_detect_nms',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -415,7 +415,7 @@ def multi_gen_project_detect_weighted_mini_10_001_nms():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_weighted_mini_10_001_nms',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_weighted_mini_10_001_nms',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
 
@@ -453,7 +453,7 @@ def multi_gen_project_detect_weighted_001_nms():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_gen_project_detect_weighted_001_nms',
+        plot_save_dir='/experiments/batch/multi_gen_project_detect_weighted_001_nms',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -488,7 +488,7 @@ def multi_project_detect_2_only_project():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_2_only_project',
+        plot_save_dir='/experiments/batch/multi_project_detect_2_only_project',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -523,7 +523,7 @@ def multi_project_detect_3_only_project():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_3_only_project',
+        plot_save_dir='/experiments/batch/multi_project_detect_3_only_project',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -558,7 +558,7 @@ def multi_project_detect_2_pano_nms_project():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_2_pano_nms_project',
+        plot_save_dir='/experiments/batch/multi_project_detect_2_pano_nms_project',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -593,7 +593,7 @@ def multi_project_detect_3_pano_nms_project():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_3_pano_nms_project',
+        plot_save_dir='/experiments/batch/multi_project_detect_3_pano_nms_project',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -628,7 +628,7 @@ def multi_project_detect_2_pano_nms_project_001():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_2_pano_nms_project_001',
+        plot_save_dir='/experiments/batch/multi_project_detect_2_pano_nms_project_001',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -663,7 +663,7 @@ def multi_project_detect_3_pano_nms_project_001():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_3_pano_nms_project_001',
+        plot_save_dir='/experiments/batch/multi_project_detect_3_pano_nms_project_001',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -698,7 +698,7 @@ def multi_project_detect_2_pano_weight_project():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_2_pano_weight_project',
+        plot_save_dir='/experiments/batch/multi_project_detect_2_pano_weight_project',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -733,7 +733,7 @@ def multi_project_detect_3_pano_weight_project():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_3_pano_weight_project',
+        plot_save_dir='/experiments/batch/multi_project_detect_3_pano_weight_project',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -768,7 +768,7 @@ def multi_project_detect_2_pano_weight_project_001():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_2_pano_weight_project_001',
+        plot_save_dir='/experiments/batch/multi_project_detect_2_pano_weight_project_001',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
@@ -803,44 +803,32 @@ def multi_project_detect_3_pano_weight_project_001():
                     8: 'sofa',
                     9: 'door', 10: 'cabinet', 11: 'bedside', 12: 'tv', 13: 'computer', 14: 'glass', 15: 'rug',
                     16: 'shelf'},
-        plot_save_dir='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/experiments/multi_project_detect_3_pano_weight_project_001',
+        plot_save_dir='/experiments/batch/multi_project_detect_3_pano_weight_project_001',
         # plot_names_dict={0: True, 1: True, 2: True, 3: False, 4: False, 5: True, 6: False, 7: False, 8: False,
         #                  9: True, 10: False, 11: True, 12: True, 13: False, 14: False, 15: False, 16: False},
     )
 
 
 if __name__ == '__main__':
-    multi_gen_project_detect_mini_10()
-    multi_gen_project_detect()
-    multi_gen_project_detect_mini_10_001()
-    multi_gen_project_detect_001()
-    multi_gen_project_detect_weighted_mini_10()
-    multi_gen_project_detect_weighted_detect()
-    multi_gen_project_detect_weighted_mini_10_001()
-    multi_gen_project_detect_weighted_001()
-    multi_gen_project_detect_weighted_mini_10_nms()
-    multi_gen_project_detect_weighted_detect_nms()
-    multi_gen_project_detect_weighted_mini_10_001_nms()
-    multi_gen_project_detect_weighted_001_nms()
-    multi_project_detect_2_only_project()
-    multi_project_detect_3_only_project()
-    multi_project_detect_2_pano_nms_project()
-    multi_project_detect_3_pano_nms_project()
-    multi_project_detect_2_pano_nms_project_001()
-    multi_project_detect_3_pano_nms_project_001()
-    multi_project_detect_2_pano_weight_project()
-    multi_project_detect_3_pano_weight_project()
-    multi_project_detect_2_pano_weight_project_001()
-    multi_project_detect_3_pano_weight_project_001()
-
-
-
-
-
-
-
-
-
-
-
-    
+    multi_gen_project_detect_mini_10()  # 0.481
+    multi_gen_project_detect()  # 0.439
+    multi_gen_project_detect_mini_10_001()  # 0.353
+    multi_gen_project_detect_001()  # 0.398
+    multi_gen_project_detect_weighted_mini_10()  # 0.481
+    multi_gen_project_detect_weighted_detect()  # 0.472
+    multi_gen_project_detect_weighted_mini_10_001()  # 0.508 ##########
+    multi_gen_project_detect_weighted_001()  # 0.470
+    multi_gen_project_detect_weighted_mini_10_nms()  # 0.488
+    multi_gen_project_detect_weighted_detect_nms()  # Error
+    multi_gen_project_detect_weighted_mini_10_001_nms()  # 0.466
+    multi_gen_project_detect_weighted_001_nms()  # Error
+    multi_project_detect_2_only_project()  # 0.474 ##########
+    multi_project_detect_3_only_project()  # 0.358
+    multi_project_detect_2_pano_nms_project()  # 0.573 ##########
+    multi_project_detect_3_pano_nms_project()  # 0.514
+    multi_project_detect_2_pano_nms_project_001()  # 0.462
+    multi_project_detect_3_pano_nms_project_001()  # 0.420
+    multi_project_detect_2_pano_weight_project()  # 0.541
+    multi_project_detect_3_pano_weight_project()  # 0.517
+    multi_project_detect_2_pano_weight_project_001()  # 0.526
+    multi_project_detect_3_pano_weight_project_001()  # 0.524

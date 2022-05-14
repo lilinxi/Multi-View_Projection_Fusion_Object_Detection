@@ -21,7 +21,7 @@ def compute_mAP(
         plot_save_dir: str,
         plot_names_dict: dict = None,
         device: str = '',  # cuda device, i.e. 0 or 0,1,2,3 or cpu
-):
+) -> float:
     """
     Compute mAP for a given dataset.
     """
@@ -59,7 +59,7 @@ def compute_mAP(
         # step2. 获取检测结果并缓存
         detect_result_file = f'{detect_save_dir}/{data.image_filename}.txt'
         if os.path.exists(detect_result_file):
-            print(f'{detect_result_file} exists, skip...')
+            logging.info(f'{detect_result_file} exists, skip...')
             yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse()
             yolo_model_resp.ParseFromString(open(detect_result_file, 'rb').read())
         else:
@@ -94,9 +94,12 @@ def compute_mAP(
     # step6. 绘制检测指标
     stats = [np.concatenate(x, 0) for x in zip(*stats)]  # to numpy
     if len(stats) and stats[0].any():
-        metrics_utils.yolov5_metrics_utils.ap_per_class(*stats, plot=True, save_dir=plot_save_dir, names=names_dict)
+        tp, fp, p, r, f1, ap, unique_classes = \
+            metrics_utils.yolov5_metrics_utils.ap_per_class(*stats, plot=True, save_dir=plot_save_dir, names=names_dict)
+        mAP = ap[:, 0].mean()
     confusion_matrix.plot(save_dir=plot_save_dir, names=list(names_dict.values()))
-    print(f'save: {plot_save_dir}, {detect_save_dir}')
+    logging.info(f'save: {plot_save_dir}, {detect_save_dir}')
+    return mAP
 
 
 if __name__ == '__main__':
