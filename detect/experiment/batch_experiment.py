@@ -33,13 +33,13 @@ def multi_gen_project_detect_mini_10():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_mini_10",
         cache=False,
@@ -69,13 +69,13 @@ def multi_gen_project_detect():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect",
         cache=False,
@@ -105,14 +105,14 @@ def multi_gen_project_detect_mini_10_001():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
             iou_thr=0.001,
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_mini_10_001",
         cache=False,
@@ -142,14 +142,14 @@ def multi_gen_project_detect_001():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
             iou_thr=0.001,
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_001",
         cache=False,
@@ -179,13 +179,13 @@ def multi_gen_project_detect_weighted_mini_10():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_weighted_mini_10",
         cache=False,
@@ -215,13 +215,13 @@ def multi_gen_project_detect_weighted_detect():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_weighted_detect",
         cache=False,
@@ -251,14 +251,14 @@ def multi_gen_project_detect_weighted_mini_10_001():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
             iou_thr=0.001,
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_weighted_mini_10_001",
         cache=False,
@@ -288,14 +288,14 @@ def multi_gen_project_detect_weighted_001():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
             iou_thr=0.001,
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_weighted_001",
         cache=False,
@@ -325,14 +325,14 @@ def multi_gen_project_detect_weighted_mini_10_nms():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
             ensemble_boxes_nms_func=nms,
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_weighted_mini_10_nms",
         cache=False,
@@ -362,14 +362,14 @@ def multi_gen_project_detect_weighted_detect_nms():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
             ensemble_boxes_nms_func=nms,
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_weighted_detect_nms",
         cache=False,
@@ -399,7 +399,7 @@ def multi_gen_project_detect_weighted_mini_10_001_nms():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
             iou_thr=0.001,
             ensemble_boxes_nms_func=nms,
@@ -407,7 +407,7 @@ def multi_gen_project_detect_weighted_mini_10_001_nms():
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_weighted_mini_10_001_nms",
         cache=False,
@@ -437,7 +437,7 @@ def multi_gen_project_detect_weighted_001_nms():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
             iou_thr=0.001,
             ensemble_boxes_nms_func=nms,
@@ -445,7 +445,7 @@ def multi_gen_project_detect_weighted_001_nms():
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_gen_project_detect_weighted_001_nms",
         cache=False,
@@ -474,13 +474,13 @@ def multi_project_detect_2_only_project():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_2_only_project",
         cache=False,
@@ -509,13 +509,13 @@ def multi_project_detect_3_only_project():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_3_only_project",
         cache=False,
@@ -544,13 +544,13 @@ def multi_project_detect_2_pano_nms_project():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_2_pano_nms_project",
         cache=False,
@@ -579,13 +579,13 @@ def multi_project_detect_3_pano_nms_project():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_3_pano_nms_project",
         cache=False,
@@ -614,13 +614,13 @@ def multi_project_detect_2_pano_nms_project_001():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_2_pano_nms_project_001",
         cache=False,
@@ -649,13 +649,13 @@ def multi_project_detect_3_pano_nms_project_001():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_3_pano_nms_project_001",
         cache=False,
@@ -684,13 +684,13 @@ def multi_project_detect_2_pano_weight_project():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_2_pano_weight_project",
         cache=False,
@@ -719,13 +719,13 @@ def multi_project_detect_3_pano_weight_project():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_3_pano_weight_project",
         cache=False,
@@ -754,13 +754,13 @@ def multi_project_detect_2_pano_weight_project_001():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_2_pano_weight_project_001",
         cache=False,
@@ -789,13 +789,13 @@ def multi_project_detect_3_pano_weight_project_001():
             req=req,
             proj_req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
-                weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+                weights_path='/weights/stereo_1n_d_exp113_best.pt',
             ),
         )
 
     metrics_utils.mAP.compute_mAP(
         format_dataset=format_dataset,
-        weights_path="/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt",
+        weights_path="/weights/stereo_1n_d_exp113_best.pt",
         detect_func=multi_gen_project_detect_mini_10,
         detect_save_dir="/Users/bytedance/Dataset/sun360_extended_dataset_format/labels/detect/multi_project_detect_3_pano_weight_project_001",
         cache=False,
