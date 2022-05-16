@@ -1,6 +1,8 @@
 from typing import List
 
+import os
 import cv2
+import hashlib
 
 import client.object_detection_client
 import proto_gen.detect_pb2
@@ -82,11 +84,22 @@ def project_detect(
         detect_result_bbx_list=[],
     )
     image = cv2.imread(req.image_path)
-    proj_image = proj_func(image, proj_params, proj_width=proj_width, proj_height=proj_height)
-    cv2.imwrite('/tmp/project_detect/proj_image.jpg', proj_image)
+
+    req_str = proj_params.SerializeToString()
+    req_md5 = hashlib.md5(req_str).hexdigest()
+    with open(req.image_path, 'rb') as fp:
+        data = fp.read()
+    file_md5 = hashlib.md5(data).hexdigest()
+    hash_req = f'{req_md5}_{file_md5}'
+    cache_file = f'/tmp/project_detect/{hash_req}.jpg'
+
+    if not os.path.exists(cache_file):
+        proj_image = proj_func(image, proj_params, proj_width=proj_width, proj_height=proj_height)
+        cv2.imwrite(cache_file, proj_image)
+
     proj_yolo_model_resp = detect_func(
         proto_gen.detect_pb2.YoloModelRequest(
-            image_path="/tmp/project_detect/proj_image.jpg",
+            image_path=cache_file,
             image_size=req.image_size,
             weights_path=req.weights_path,
             conf_thres=req.conf_thres,

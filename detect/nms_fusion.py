@@ -81,6 +81,7 @@ def nms_fusion_single_label(detect_result_bbx_list: List[proto_gen.detect_pb2.De
 def nms_fusion(
         all_detect_result_bbx_list: List[proto_gen.detect_pb2.DetectResultBBX],
 ) -> List[proto_gen.detect_pb2.DetectResultBBX]:
+    all_detect_result_bbx_list = all_detect_result_bbx_list[:]
     # step1. label -> detect_result_bbx_list
     labeled_detect_result_bbx_list_map = {}
     while len(all_detect_result_bbx_list) > 0:
@@ -128,18 +129,36 @@ if __name__ == '__main__':
     yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse()
     yolo_model_resp.ParseFromString(open('./demo_nms_yolo_model_resp', 'rb').read())
 
-    # label_yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse(
-    #     image_path=yolo_model_resp.image_path,
-    #     detect_result_bbx_list=[bbx for bbx in yolo_model_resp.detect_result_bbx_list if bbx.label == 6],
-    # )
-    cv2.imshow('1', utils.plot.PlotYolov5ModelResponse(yolo_model_resp))
+    label_yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse(
+        image_path=yolo_model_resp.image_path,
+        detect_result_bbx_list=[bbx for bbx in yolo_model_resp.detect_result_bbx_list if bbx.label == 2],
+        ## 2 6 7 8 9 10
+    )
+    cv2.imshow('label_yolo_model_resp.png', utils.plot.PlotYolov5ModelResponse(label_yolo_model_resp)[:, ::])
+    cv2.imwrite('label_yolo_model_resp.png',
+                utils.plot.PlotYolov5ModelResponse(label_yolo_model_resp)[200: 500, 420: 750, :])
 
-    bbx_fusion_list = nms_fusion(yolo_model_resp.detect_result_bbx_list)
-
+    bbx_fusion_list = nms_fusion(label_yolo_model_resp.detect_result_bbx_list)
     fusion_yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse(
         image_path=yolo_model_resp.image_path,
         detect_result_bbx_list=bbx_fusion_list,
     )
-    cv2.imshow('2', utils.plot.PlotYolov5ModelResponse(fusion_yolo_model_resp))
+    cv2.imshow('fusion_yolo_model_resp.png', utils.plot.PlotYolov5ModelResponse(fusion_yolo_model_resp)[:, :, :])
+    cv2.imwrite('fusion_yolo_model_resp.png',
+                utils.plot.PlotYolov5ModelResponse(fusion_yolo_model_resp)[200: 500, 420: 750, :])
+    # 2: 462，287，699，407
+    # 10：517，202，731，254
+    # 9：736，217，802，316
+
+    import detect.nms
+
+    nms_list = detect.nms.non_max_suppression(label_yolo_model_resp.detect_result_bbx_list)
+    nms_yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse(
+        image_path=yolo_model_resp.image_path,
+        detect_result_bbx_list=nms_list,
+    )
+    cv2.imshow('nms_yolo_model_resp.png', utils.plot.PlotYolov5ModelResponse(nms_yolo_model_resp)[:, :, :])
+    cv2.imwrite('nms_yolo_model_resp.png',
+                utils.plot.PlotYolov5ModelResponse(nms_yolo_model_resp)[200: 500, 420: 750, :])
 
     cv2.waitKey(0)

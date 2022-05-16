@@ -59,6 +59,19 @@ def multi_gen_project_detect(
     return ret_proj_resp
 
 
+def weighted_detect(req: proto_gen.detect_pb2.YoloModelRequest):
+    return multi_gen_project_detect(
+        req=proto_gen.detect_pb2.YoloModelRequest(
+            image_path=req.image_path,
+            weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/equi_1n_exp13_best.pt',
+        ),
+        proj_req=proto_gen.detect_pb2.YoloModelRequest(
+            image_path=req.image_path,
+            weights_path='/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/weights/stereo_1n_d_exp113_best.pt',
+        ),
+    )
+
+
 def multi_gen_project_detect_weighted(
         req: proto_gen.detect_pb2.YoloModelRequest,
         proj_req: proto_gen.detect_pb2.YoloModelRequest,

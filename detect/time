@@ -1,0 +1,77 @@
+multi proj
+
+15-05-2022:09:42:51,918 ERROR    [experiment_.py:83] 0 time cost 0.07790064811706543 s
+15-05-2022:09:42:51,989 ERROR    [experiment_.py:83] 1 time cost 0.06981611251831055 s
+15-05-2022:09:42:52,59 ERROR    [experiment_.py:83] 2 time cost 0.06977701187133789 s
+15-05-2022:09:42:52,129 ERROR    [experiment_.py:83] 3 time cost 0.06904911994934082 s
+15-05-2022:09:42:52,191 ERROR    [experiment_.py:83] 4 time cost 0.060667991638183594 s
+15-05-2022:09:42:52,252 ERROR    [experiment_.py:83] 5 time cost 0.06051301956176758 s
+15-05-2022:09:42:52,313 ERROR    [experiment_.py:83] 6 time cost 0.0612337589263916 s
+15-05-2022:09:42:52,376 ERROR    [experiment_.py:83] 7 time cost 0.0626070499420166 s
+15-05-2022:09:42:52,434 ERROR    [experiment_.py:83] 8 time cost 0.057654619216918945 s
+
+std std 7.9
+15-05-2022:08:45:01,767 ERROR    [experiment_.py:82] 0 time cost 0.33920788764953613 s
+15-05-2022:08:45:02,230 ERROR    [experiment_.py:82] 1 time cost 0.46151304244995117 s
+15-05-2022:08:45:02,467 ERROR    [experiment_.py:82] 2 time cost 0.2368178367614746 s
+15-05-2022:08:45:02,794 ERROR    [experiment_.py:82] 3 time cost 0.3259108066558838 s
+15-05-2022:08:45:03,66 ERROR    [experiment_.py:82] 4 time cost 0.2705726623535156 s
+15-05-2022:08:45:03,351 ERROR    [experiment_.py:82] 5 time cost 0.2841639518737793 s
+15-05-2022:08:45:03,691 ERROR    [experiment_.py:82] 6 time cost 0.339245080947876 s
+15-05-2022:08:45:03,873 ERROR    [experiment_.py:82] 7 time cost 0.1817030906677246 s
+15-05-2022:08:45:04,86 ERROR    [experiment_.py:82] 8 time cost 0.2121448516845703 s
+
+equi std 7.9
+
+15-05-2022:08:48:46,395 ERROR    [experiment_.py:82] 0 time cost 0.3369758129119873 s
+15-05-2022:08:48:46,797 ERROR    [experiment_.py:82] 1 time cost 0.4018111228942871 s
+15-05-2022:08:48:47,75 ERROR    [experiment_.py:82] 2 time cost 0.27759599685668945 s
+15-05-2022:08:48:47,314 ERROR    [experiment_.py:82] 3 time cost 0.23813986778259277 s
+15-05-2022:08:48:47,619 ERROR    [experiment_.py:82] 4 time cost 0.3041808605194092 s
+15-05-2022:08:48:47,922 ERROR    [experiment_.py:82] 5 time cost 0.30191802978515625 s
+15-05-2022:08:48:48,244 ERROR    [experiment_.py:82] 6 time cost 0.3214550018310547 s
+15-05-2022:08:48:48,419 ERROR    [experiment_.py:82] 7 time cost 0.17430591583251953 s
+15-05-2022:08:48:48,703 ERROR    [experiment_.py:82] 8 time cost 0.2825021743774414 s
+
+
+equi stereo 7.9
+
+15-05-2022:08:54:37,552 ERROR    [experiment_.py:82] 0 time cost 0.31909608840942383 s
+15-05-2022:08:54:37,988 ERROR    [experiment_.py:82] 1 time cost 0.4343678951263428 s
+15-05-2022:08:54:38,272 ERROR    [experiment_.py:82] 2 time cost 0.2837510108947754 s
+15-05-2022:08:54:38,514 ERROR    [experiment_.py:82] 3 time cost 0.24129676818847656 s
+15-05-2022:08:54:38,815 ERROR    [experiment_.py:82] 4 time cost 0.29996800422668457 s
+15-05-2022:08:54:39,112 ERROR    [experiment_.py:82] 5 time cost 0.2965390682220459 s
+15-05-2022:08:54:39,427 ERROR    [experiment_.py:82] 6 time cost 0.31305718421936035 s
+15-05-2022:08:54:39,590 ERROR    [experiment_.py:82] 7 time cost 0.16241908073425293 s
+15-05-2022:08:54:39,865 ERROR    [experiment_.py:82] 8 time cost 0.2749197483062744 s
+
+
+equi stereo deform 8.3
+
+15-05-2022:08:58:39,633 ERROR    [experiment_.py:82] 0 time cost 0.3948023319244385 s
+15-05-2022:08:58:40,87 ERROR    [experiment_.py:82] 1 time cost 0.453571081161499 s
+15-05-2022:08:58:40,378 ERROR    [experiment_.py:82] 2 time cost 0.2902097702026367 s
+15-05-2022:08:58:40,626 ERROR    [experiment_.py:82] 3 time cost 0.2472529411315918 s
+15-05-2022:08:58:40,916 ERROR    [experiment_.py:82] 4 time cost 0.28966283798217773 s
+15-05-2022:08:58:41,319 ERROR    [experiment_.py:82] 5 time cost 0.40244388580322266 s
+15-05-2022:08:58:41,616 ERROR    [experiment_.py:82] 6 time cost 0.2965879440307617 s
+15-05-2022:08:58:41,769 ERROR    [experiment_.py:82] 7 time cost 0.1525561809539795 s
+15-05-2022:08:58:42,35 ERROR    [experiment_.py:82] 8 time cost 0.26569604873657227 s
+
+
+equi stereo deform fusion 8.3
+
+
+15-05-2022:08:59:39,762 ERROR    [experiment_.py:83] 0 time cost 0.35361409187316895 s
+15-05-2022:08:59:40,173 ERROR    [experiment_.py:83] 1 time cost 0.41033220291137695 s
+15-05-2022:08:59:40,435 ERROR    [experiment_.py:83] 2 time cost 0.26195478439331055 s
+15-05-2022:08:59:40,661 ERROR    [experiment_.py:83] 3 time cost 0.22537493705749512 s
+15-05-2022:08:59:40,947 ERROR    [experiment_.py:83] 4 time cost 0.28577613830566406 s
+15-05-2022:08:59:41,225 ERROR    [experiment_.py:83] 5 time cost 0.2774209976196289 s
+15-05-2022:08:59:41,523 ERROR    [experiment_.py:83] 6 time cost 0.2976677417755127 s
+15-05-2022:08:59:41,679 ERROR    [experiment_.py:83] 7 time cost 0.1546800136566162 s
+15-05-2022:08:59:41,941 ERROR    [experiment_.py:83] 8 time cost 0.2623729705810547 s
+15-05-2022:08:59:42,307 ERROR    [experiment_.py:83] 9 time cost 0.3655211925506592 s
+15-05-2022:08:59:42,571 ERROR    [experiment_.py:83] 10 time cost 0.2627561092376709 s
+15-05-2022:08:59:43,711 ERROR    [experiment_.py:83] 11 time cost 1.140148401260376 s
