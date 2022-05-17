@@ -59,7 +59,8 @@ def PlotYolov5ModelResponse(
 ) -> np.ndarray:
     # x, im, color = (128, 128, 128), label = None, line_thickness = 3
     im = cv2.imread(yolo_model_resp.image_path)  # BGR
-    tl = round(0.0005 * (im.shape[0] + im.shape[1]) / 2) + 1  # line/font thickness
+    tl = round(0.002 * (im.shape[0] + im.shape[1]) / 2) + 1  # line/font thickness
+    # tl = round(0.0005 * (im.shape[0] + im.shape[1]) / 2) + 1  # line/font thickness
     for detect_result_bbx in yolo_model_resp.detect_result_bbx_list:
         color = Colors()(detect_result_bbx.label, True)
         # rect
