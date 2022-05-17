@@ -135,7 +135,7 @@ if __name__ == '__main__':
         ## 2 6 7 8 9 10
     )
     cv2.imshow('label_yolo_model_resp.png', utils.plot.PlotYolov5ModelResponse(label_yolo_model_resp)[:, ::])
-    cv2.imwrite('label_yolo_model_resp.png',
+    cv2.imwrite('nms_nmf/label_yolo_model_resp.png',
                 utils.plot.PlotYolov5ModelResponse(label_yolo_model_resp)[200: 500, 420: 750, :])
 
     bbx_fusion_list = nms_fusion(label_yolo_model_resp.detect_result_bbx_list)
@@ -144,7 +144,7 @@ if __name__ == '__main__':
         detect_result_bbx_list=bbx_fusion_list,
     )
     cv2.imshow('fusion_yolo_model_resp.png', utils.plot.PlotYolov5ModelResponse(fusion_yolo_model_resp)[:, :, :])
-    cv2.imwrite('fusion_yolo_model_resp.png',
+    cv2.imwrite('nms_nmf/fusion_yolo_model_resp.png',
                 utils.plot.PlotYolov5ModelResponse(fusion_yolo_model_resp)[200: 500, 420: 750, :])
     # 2: 462，287，699，407
     # 10：517，202，731，254
@@ -158,7 +158,7 @@ if __name__ == '__main__':
         detect_result_bbx_list=nms_list,
     )
     cv2.imshow('nms_yolo_model_resp.png', utils.plot.PlotYolov5ModelResponse(nms_yolo_model_resp)[:, :, :])
-    cv2.imwrite('nms_yolo_model_resp.png',
+    cv2.imwrite('nms_nmf/nms_yolo_model_resp.png',
                 utils.plot.PlotYolov5ModelResponse(nms_yolo_model_resp)[200: 500, 420: 750, :])
 
     cv2.waitKey(0)
