@@ -40,7 +40,7 @@ if __name__ == '__main__':
         image_height=512,
         class_labels=['bed', 'painting', 'table', 'mirror', 'window', 'curtain', 'chair', 'light', 'sofa',
                       'door', 'cabinet', 'bedside', 'tv', 'computer', "glass", "rug", "shelf"],
-        sub_index_list=[20],
+        sub_index_list=[5],
     )
 
     for i, data in enumerate(format_dataset):
