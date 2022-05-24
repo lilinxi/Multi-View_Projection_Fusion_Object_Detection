@@ -1,5 +1,6 @@
 import os
 import logging
+import shutil
 from typing import List
 
 import cv2
@@ -323,7 +324,7 @@ if __name__ == "__main__":
         level=logging.ERROR,
     )
 
-    format_dataset = MiniFormatDataset(
+    format_dataset = SubFormatDataset(
         dataset_root="/Users/bytedance/Dataset/sun360_extended_dataset_format",
         train=False,
         image_width=dataset.sun360_extended_dataset.Sun360ExtendedPanoWidth,
@@ -331,5 +332,7 @@ if __name__ == "__main__":
         class_labels=dataset.sun360_extended_dataset.Sun360ExtendedClassLabels,
     )
     for i, data in enumerate(format_dataset):
-        cv2.imshow(data.image_filename, utils.plot.PlotDatasetModel(dataset_model=data))
-        cv2.waitKey(0)
+        print(data.image_path)
+        shutil.copy(data.image_path, '/Users/bytedance/Desktop/')
+        # cv2.imshow(data.image_filename, utils.plot.PlotDatasetModel(dataset_model=data))
+        # cv2.waitKey(0)

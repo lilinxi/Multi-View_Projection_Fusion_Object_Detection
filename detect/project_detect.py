@@ -91,6 +91,8 @@ def project_detect(
         data = fp.read()
     file_md5 = hashlib.md5(data).hexdigest()
     hash_req = f'{req_md5}_{file_md5}'
+    if not os.path.exists('/tmp/project_detect'):
+        os.makedirs('/tmp/project_detect')
     cache_file = f'/tmp/project_detect/{hash_req}.png'
 
     if not os.path.exists(cache_file):
