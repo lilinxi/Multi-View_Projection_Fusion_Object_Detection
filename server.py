@@ -7,6 +7,7 @@ import proto_gen.detect_pb2
 import proto_gen.detect_pb2_grpc
 
 import detect.self_mvpf_detect
+import detect.multi_gen_project_detect
 
 
 # https://github.com/grpc/grpc/blob/master/examples/python/helloworld/greeter_server.py
@@ -17,7 +18,8 @@ class DeformYolov5Server(proto_gen.detect_pb2_grpc.DeformYolov5Servicer):
             context
     ) -> proto_gen.detect_pb2.YoloModelResponse:
         logging.info(f'request: {request}')
-        response = detect.self_mvpf_detect.weighted_detect(request)
+        # response = detect.self_mvpf_detect.weighted_detect(request)
+        response = detect.multi_gen_project_detect.weighted_detect(request)
         logging.info(f'response: {response}')
         return response
 

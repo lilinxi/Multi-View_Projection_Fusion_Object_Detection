@@ -10,6 +10,7 @@
 /usr/local/bin/python3 -m pip install seaborn
 /usr/local/bin/python3 -m pip install pyyaml
 /usr/local/bin/python3 -m pip install ensemble-boxes
+/usr/local/bin/python3 -m pip install open3d
 ```
 
 ## 目录介绍

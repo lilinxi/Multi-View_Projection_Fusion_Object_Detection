@@ -35,7 +35,7 @@ def self_mvpf_detect(
     i = 0
     for detect_result_bbx in yolo_model_resp.detect_result_bbx_list:
         center = (detect_result_bbx.xmax + detect_result_bbx.xmin) / 2 / pano_width
-        theta_rotate = center * np.pi * 2
+        theta_rotate = (center * np.pi * 2 + np.pi) % (np.pi * 2)
         proj_resp = detect.project_detect.project_detect(
             req=proto_gen.detect_pb2.YoloModelRequest(
                 image_path=req.image_path,
@@ -50,13 +50,15 @@ def self_mvpf_detect(
             proj_height=proj_height,
             pano_width=pano_width,
             pano_height=pano_height,
+            project_index=i,
         )
         # import utils.plot
         # image = cv2.imread(req.image_path)
         # proj_image = proj_func(image, proto_gen.detect_pb2.StereoProjectParams(
-        #         project_dis=1, project_size=2, theta_rotate=theta_rotate), proj_width=proj_width, proj_height=proj_height)
+        #     project_dis=1, project_size=2, theta_rotate=theta_rotate), proj_width=proj_width, proj_height=proj_height)
         #
-        # cv2.imwrite(f'/Users/bytedance/Desktop/proj_resp_{i}.png', utils.plot.PlotYolov5ModelResponse(proj_resp))
+        # cv2.imwrite(f'/Users/bytedance/Desktop/proj_resp_bbx_{i}.png',
+        #             utils.plot.PlotDetectBBX(proj_resp.image_path, detect_result_bbx))
         # cv2.imwrite(f'/Users/bytedance/Desktop/proj_image_{i}.png', proj_image)
         # print(f'{i},{theta_rotate}')
         # i += 1

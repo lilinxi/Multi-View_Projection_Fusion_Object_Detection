@@ -78,6 +78,7 @@ def project_detect(
         proj_height: int = 640,
         pano_width: int = 1024,
         pano_height: int = 512,
+        project_index: int = 0,
 ) -> proto_gen.detect_pb2.YoloModelResponse:
     yolo_model_resp = proto_gen.detect_pb2.YoloModelResponse(
         image_path=req.image_path,
@@ -108,12 +109,19 @@ def project_detect(
             iou_thres=req.iou_thres,
         ))
 
+    # import utils.plot
+    # cv2.imwrite(f'/Users/bytedance/Desktop/proj_resp_resp_{project_index}.png',
+    #             utils.plot.PlotYolov5ModelResponse(proj_yolo_model_resp))
+
     for bbx in proj_yolo_model_resp.detect_result_bbx_list:
         yolo_model_resp.detect_result_bbx_list.extend(
             detect_box_project2pano(bbx, proj_params, projXY2panoXYZ_func=projXY2panoXYZ_func,
                                     proj_width=proj_width, proj_height=proj_height,
                                     pano_width=pano_width, pano_height=pano_height)
         )
+
+    # cv2.imwrite(f'/Users/bytedance/Desktop/re-proj_resp_{project_index}.png',
+    #             utils.plot.PlotYolov5ModelResponse(yolo_model_resp))
     return yolo_model_resp
 
 

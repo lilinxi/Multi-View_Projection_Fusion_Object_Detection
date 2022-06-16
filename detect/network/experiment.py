@@ -40,12 +40,13 @@ if __name__ == '__main__':
         image_height=512,
         class_labels=['bed', 'painting', 'table', 'mirror', 'window', 'curtain', 'chair', 'light', 'sofa',
                       'door', 'cabinet', 'bedside', 'tv', 'computer', "glass", "rug", "shelf"],
-        sub_index_list=[5],
+        sub_index_list=[13],
     )
 
     for i, data in enumerate(format_dataset):
-        cv2.imshow("data", utils.plot.PlotDatasetModel(data))
+        cv2.imshow(f"{i}_data", utils.plot.PlotDatasetModel(data))
         cv2.imwrite(f"/Users/bytedance/Desktop/data.png", utils.plot.PlotDatasetModel(data, plot_bbx=False))
+        cv2.imwrite(f"/Users/bytedance/Desktop/data_gt.png", utils.plot.PlotDatasetModel(data, plot_bbx=True))
 
         resp = weight_proj_detect(
             detect.self_mvpf_detect.self_mvpf_detect,
