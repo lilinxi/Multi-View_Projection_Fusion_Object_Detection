@@ -36,16 +36,22 @@ if __name__ == '__main__':
     import utils.plot
 
     image_list = [
-        'sun360_pano_aadmrasnwpvqnp',
-        'sun360_pano_4ee978a83c6d02eb2bee454da5569011',
-        'sfd2d3d_pano_4d28fa2a55f9a72dc619fa32cd29f327',
-        'sfd2d3d_pano_0019e0a0c8ca0913e543c033a843c58f',
+        # 'sun360_pano_aadmrasnwpvqnp',
+        # 'sun360_pano_4ee978a83c6d02eb2bee454da5569011',
+        # 'sfd2d3d_pano_4d28fa2a55f9a72dc619fa32cd29f327',
+        # 'sfd2d3d_pano_0019e0a0c8ca0913e543c033a843c58f',
+        'sfd2d3d_pano_382483ef2692f3a6b7fa601ea2b7b3c2',
+        'sun360_pano_aakunzsfpnskib',
+        'sun360_pano_alygkunpheaoiy',
+        'iGibson_input1',
         'iGibson_input2',
-        'iGibson_input5',
+        'iGibson_input3',
+        'iGibson_input4',
+        # 'iGibson_input5',
     ]
 
     for i, image_name in enumerate(image_list):
-        image_path = f'/Users/bytedance/Desktop/DeepResult/dp_mvpf_mix/visualization/{image_name}/rgb.png'
+        image_path = f'/Users/bytedance/Desktop/论文存档/DeepResult/dp_mvpf_mix/visualization/{image_name}/rgb.png'
 
 
         curTime = time.time()

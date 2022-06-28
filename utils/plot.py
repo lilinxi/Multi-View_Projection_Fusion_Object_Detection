@@ -209,6 +209,7 @@ def PlotPointCloud(image_path):
 
 if __name__ == '__main__':
     # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_13.png')
-    PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_11.png')
+    # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_11.png')
+    PlotPointCloud('/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/detect/illustrate/v2/proj_resp_bbx_7.png')
     # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_9.png')
     # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_8.png')
