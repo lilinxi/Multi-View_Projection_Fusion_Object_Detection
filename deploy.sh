@@ -3,3 +3,4 @@
 # python -m pip install open3d
 conda activate Yolov5
 python server.py
+#nohup python server.py &
