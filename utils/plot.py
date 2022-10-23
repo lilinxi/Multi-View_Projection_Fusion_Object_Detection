@@ -2,7 +2,7 @@ from typing import List
 
 import cv2
 import numpy as np
-import open3d
+# import open3d
 
 import proj.transform
 import proto_gen.detect_pb2
@@ -180,36 +180,36 @@ def plot_nda_list(nda_list: List[np.ndarray], width_size: int = 0, border_size: 
         nda_list_vstack.append(np.hstack(nda_list_hstack))
     return np.vstack(nda_list_vstack)
 
-def PlotPointCloud(image_path):
-    img = cv2.imread(image_path)
-    img = np.array(img)
-    print(img.shape)
-
-    points = []
-    colors = []
-    # 采样间隔为：1
-    for i in range(0, img.shape[0], 1):
-        for j in range(0, img.shape[1], 1):
-            v = i / img.shape[0]
-            u = j / img.shape[1]
-            rgb = img[i][j] / 255
-            x, y, z = proj.transform.XY2xyz(u, v)
-            points.append([x, y, z])
-            colors.append(rgb[::-1])
-
-    points = np.array(points)
-    colors = np.array(colors)
-    print(points.shape)
-    print(colors.shape)
-
-    pcd = open3d.geometry.PointCloud()
-    pcd.points = open3d.utility.Vector3dVector(points)
-    pcd.colors = open3d.utility.Vector3dVector(colors)
-    open3d.visualization.draw_geometries([pcd])
-
-if __name__ == '__main__':
-    # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_13.png')
-    # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_11.png')
-    PlotPointCloud('/Users/bytedance/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/detect/illustrate/v2/proj_resp_bbx_7.png')
-    # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_9.png')
-    # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_8.png')
+# def PlotPointCloud(image_path):
+#     img = cv2.imread(image_path)
+#     img = np.array(img)
+#     print(img.shape)
+#
+#     points = []
+#     colors = []
+#     # 采样间隔为：1
+#     for i in range(0, img.shape[0], 1):
+#         for j in range(0, img.shape[1], 1):
+#             v = i / img.shape[0]
+#             u = j / img.shape[1]
+#             rgb = img[i][j] / 255
+#             x, y, z = proj.transform.XY2xyz(u, v)
+#             points.append([x, y, z])
+#             colors.append(rgb[::-1])
+#
+#     points = np.array(points)
+#     colors = np.array(colors)
+#     print(points.shape)
+#     print(colors.shape)
+#
+#     pcd = open3d.geometry.PointCloud()
+#     pcd.points = open3d.utility.Vector3dVector(points)
+#     pcd.colors = open3d.utility.Vector3dVector(colors)
+#     open3d.visualization.draw_geometries([pcd])
+#
+# if __name__ == '__main__':
+#     # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_13.png')
+#     # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_11.png')
+#     PlotPointCloud('/Users/limengfan/PycharmProjects/Multi-View_Projection_Fusion_Object_Detection/detect/illustrate/v2/proj_resp_bbx_7.png')
+#     # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_9.png')
+#     # PlotPointCloud('/Users/bytedance/Desktop/proj_resp_bbx_8.png')

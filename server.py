@@ -18,8 +18,8 @@ class DeformYolov5Server(proto_gen.detect_pb2_grpc.DeformYolov5Servicer):
             context
     ) -> proto_gen.detect_pb2.YoloModelResponse:
         logging.info(f'request: {request}')
-        # response = detect.self_mvpf_detect.weighted_detect(request)
-        response = detect.multi_gen_project_detect.weighted_detect(request)
+        response = detect.self_mvpf_detect.weighted_detect(request)
+        # response = detect.multi_gen_project_detect.weighted_detect(request)
         logging.info(f'response: {response}')
         return response
 
@@ -38,4 +38,5 @@ if __name__ == '__main__':
         datefmt='%d-%m-%Y:%H:%M:%S',
         level=logging.INFO,
     )
+    logging.info("RepF-Net waiting at 50052")
     serve()
